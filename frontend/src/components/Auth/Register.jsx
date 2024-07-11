@@ -59,7 +59,7 @@ const Register = () => {
       <h1 className=" mt-4 sm:mb-10 text-5xl font-bold text-center max-sm:text-2xl ">
         Welcome To Jobify
       </h1>
-      <img className="sm:hidden " src="/Login.jpg" alt="Login form" />
+      <img className="sm:hidden " src="/Register.jpg" alt="Login form" />
 
       <div className="grid items-center grid-cols-2 px-10 authPage">
         <div className=" items-center border shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] z-10 max-sm:col-span-2 h-fit rounded-2xl">
@@ -161,7 +161,7 @@ const Register = () => {
         </div>
 
         <div>
-          <img className="max-sm:hidden" src="/Login.jpg" alt="Form image" />
+          <img className="max-sm:hidden" src="/Register.jpg" alt="Form image" />
         </div>
       </div>
     </>
