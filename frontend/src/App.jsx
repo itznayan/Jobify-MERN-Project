@@ -21,8 +21,8 @@ import MyJobs from "./components/Job/MyJobs";
 import { useEffect, useContext } from "react";
 import { Context } from "./main";
 import { Button } from "./components/ui/button";
-import { Toaster } from "sonner";
-import { toast } from "sonner";
+import { Toaster } from "react-hot-toast";
+import "./index.css";
 function App() {
   const { isAuthorized, setIsAuthorized, setUser, user } = useContext(Context);
   useEffect(() => {
@@ -37,9 +37,8 @@ function App() {
       } catch (error) {
         setIsAuthorized(false);
       }
-
-      fetchUser();
     };
+    fetchUser();
   }, [isAuthorized]);
 
   return (
@@ -59,7 +58,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
-        <Toaster className="bg-black text-white" />
+        <Toaster />
       </BrowserRouter>
     </>
   );

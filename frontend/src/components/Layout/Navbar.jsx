@@ -27,7 +27,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className={isAuthorized ? "block " : "block "}>
+      <nav className={isAuthorized ? "block " : "hidden "}>
         <div className="px-4">
           <div className="flex justify-between">
             <div className="w-48">
