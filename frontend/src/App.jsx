@@ -20,16 +20,18 @@ import NotFound from "./components/NotFound/NotFound";
 import MyJobs from "./components/Job/MyJobs";
 import { useEffect, useContext } from "react";
 import { Context } from "./main";
-import { useToast } from "./components/ui/use-toast";
 import { Button } from "./components/ui/button";
 import { Toaster } from "sonner";
 import { toast } from "sonner";
 function App() {
-  const { isAuthorized, setIsAuthorized, user, setUser } = useContext(Context);
+  const { isAuthorized, setIsAuthorized, setUser, user } = useContext(Context);
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const responce = axios.get("", { withCredentials: true });
+        const responce = await axios.get(
+          "http://localhost:4000/api/v1/user/getuser",
+          { withCredentials: true }
+        );
         setUser(responce.data.user);
         setIsAuthorized(true);
       } catch (error) {
@@ -39,8 +41,6 @@ function App() {
       fetchUser();
     };
   }, [isAuthorized]);
-
-  console.log(isAuthorized);
 
   return (
     <>
@@ -59,9 +59,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
-        <Toaster className="invert" />
+        <Toaster className="bg-black text-white" />
       </BrowserRouter>
-      <Button onClick={() => toast("hello")}>Hello</Button>
     </>
   );
 }
