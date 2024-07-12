@@ -45,8 +45,8 @@ const Navbar = () => {
               whileInView={{ x: 0 }}
               className={
                 !show
-                  ? "menu max-sm:hidden flex items-center p-6 gap-10"
-                  : "max-sm:block border mt-6 rounded-xl shadow-lg space-y-4 show-menu menu p-4 "
+                  ? "menu max-lg:hidden flex items-center p-6 gap-10"
+                  : "max-lg:block border mt-6 rounded-xl shadow-lg space-y-4 show-menu menu p-4 "
               }
             >
               <li>
@@ -104,7 +104,7 @@ const Navbar = () => {
               )}
               <Button onClick={handleLogout}>Log Out</Button>
             </motion.ul>
-            <div className="hamburger px-4 sm:hidden mt-6 cursor-pointer">
+            <div className="hamburger px-4 lg:hidden mt-6 cursor-pointer">
               <HamburgerMenuIcon
                 onClick={() => setShow(!show)}
                 className="size-8 hover:rotate-180 duration-300"
