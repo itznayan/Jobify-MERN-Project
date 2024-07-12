@@ -1,7 +1,7 @@
 import React from "react";
 
 const PopularCategories = () => {
-  return <div></div>;
+  return <div>Poplar Category</div>;
 };
 
 export default PopularCategories;

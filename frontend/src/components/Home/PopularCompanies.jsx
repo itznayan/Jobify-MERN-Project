@@ -1,7 +1,7 @@
 import React from "react";
 
 const PopularCompanies = () => {
-  return <div></div>;
+  return <div>popular Compnies</div>;
 };
 
 export default PopularCompanies;

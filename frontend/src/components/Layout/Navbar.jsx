@@ -74,7 +74,7 @@ const Navbar = () => {
                     onClick={() => setShow(false)}
                   >
                     {user && user.role === "Employer"
-                      ? "Applicants Applicatoin"
+                      ? "Applicants Application"
                       : "Applications"}
                   </Link>
                 </li>
