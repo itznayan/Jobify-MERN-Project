@@ -24,10 +24,10 @@ const HowItWorks = () => {
 
           <VerticalTimeline>
             <VerticalTimelineElement
-              className="vertical-timeline-element--work "
+              className="vertical-timeline-element--work"
               contentStyle={{ backgroundColor: "#1d1836", color: "#fff" }}
               contentArrowStyle={{ borderRight: "7px solid #232631" }}
-              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+              iconStyle={{ background: "rgb(33, 80, 243)", color: "#fff" }}
               icon={<MdAccountCircle />}
             >
               <h3 className="text-white text-[24px] flex items-center gap-4">
@@ -46,7 +46,7 @@ const HowItWorks = () => {
               className="vertical-timeline-element--work "
               contentStyle={{ backgroundColor: "#1d1836", color: "#fff" }}
               contentArrowStyle={{ borderRight: "7px solid #232631" }}
-              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+              iconStyle={{ background: "rgb(33, 150, 24)", color: "#fff" }}
               icon={<WorkflowIcon />}
             >
               <h3 className="text-white text-[24px] flex items-center gap-4">
@@ -65,7 +65,7 @@ const HowItWorks = () => {
               className="vertical-timeline-element--work "
               contentStyle={{ backgroundColor: "#1d1836", color: "#fff" }}
               contentArrowStyle={{ borderRight: "7px solid #232631" }}
-              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+              iconStyle={{ background: "rgb(150, 15, 243)", color: "#fff" }}
               icon={<AppleIcon />}
             >
               <h3 className="text-white text-[24px] flex items-center gap-4">
