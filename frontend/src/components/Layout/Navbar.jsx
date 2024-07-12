@@ -42,7 +42,7 @@ const Navbar = () => {
             <div className="flex">
               <motion.ul
                 initial={{ x: 150 }}
-                whileInView={{ x: 0 }}
+                animate={{ x: 0 }}
                 className={
                   !show
                     ? "menu max-lg:hidden flex items-center p-6 gap-10"

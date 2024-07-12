@@ -1,15 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
     <div>
-      <div className=" bg-gray-800">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className=" bg-gray-950"
+      >
         <div className="mx-auto h-full px-4 py-28 md:py-40 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
           <div className="flex flex-col items-center justify-between lg:flex-row">
             <div className="">
-              <div className="lg:max-w-xl lg:pr-5">
-                <p className="flex text-sm uppercase text-gray-300">
+              <motion.div
+                initial={{ x: -200, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="lg:max-w-xl lg:pr-5"
+              >
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                  className="flex text-sm uppercase text-gray-300"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="mr-1 inline h-5 w-5"
@@ -23,19 +39,29 @@ const HeroSection = () => {
                     />
                   </svg>
                   An site for which find perfect jobs for you
-                </p>
+                </motion.p>
                 <h2 className="mb-6 max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug">
                   We make you look
-                  <span className="my-1 inline-block border-b-8 border-white bg-orange-400 px-4 font-bold text-white">
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    animate={{ scale: [1, 0.8, 1.2, 1] }}
+                    transition={{ delay: 0.8 }}
+                    className="my-1 inline-block border-b-8 border-white bg-orange-400 px-4 font-bold text-white"
+                  >
                     different
-                  </span>
+                  </motion.span>
                 </h2>
                 <p className="text-base text-gray-400">
                   Identify the job that is an ideal match for your skills and
                   abilities.
                 </p>
-              </div>
-              <div className="mt-10 flex flex-col items-center md:flex-row">
+              </motion.div>
+              <motion.div
+                initial={{ x: -200, opacity: 0 }}
+                animate={{ x: 0, opacity: 1, scale: [1, 0.6, 1] }}
+                transition={{ duration: 0.4, delay: 1 }}
+                className="mt-10 flex flex-col items-center md:flex-row"
+              >
                 <Link
                   to={"/job/getall"}
                   className="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-blue-700 px-6 font-medium tracking-wide text-white shadow-md transition md:mr-4 md:mb-0 md:w-auto focus:outline-none hover:bg-blue-800"
@@ -63,7 +89,7 @@ const HeroSection = () => {
                     />
                   </svg>
                 </Link>
-              </div>
+              </motion.div>
             </div>
             <div className="relative hidden lg:ml-32 lg:block lg:w-1/2">
               <svg
@@ -115,7 +141,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

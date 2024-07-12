@@ -13,7 +13,12 @@ const HowItWorks = () => {
     <>
       <div className="bg-[#1F2937]">
         <div className="container">
-          <motion.div variants={textVariant()} className="py-10">
+          <motion.div
+            initial={{ x: -400, opacity: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2, type: "spring" }}
+            className="py-10"
+          >
             <h2 className={`${styles.sectionHeadText} text-center`}>
               How We Work{" "}
             </h2>
