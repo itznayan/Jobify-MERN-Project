@@ -39,76 +39,77 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-
-            <motion.ul
-              initial={{ x: 150 }}
-              whileInView={{ x: 0 }}
-              className={
-                !show
-                  ? "menu max-lg:hidden flex items-center p-6 gap-10"
-                  : "max-lg:block border mt-6 rounded-xl shadow-lg space-y-4 show-menu menu p-4 "
-              }
-            >
-              <li>
-                <Link
-                  className="letterSpace"
-                  to={"/"}
-                  onClick={() => setShow(false)}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="letterSpace"
-                  to={"/job/getall"}
-                  onClick={() => setShow(false)}
-                >
-                  All Jobs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="letterSpace"
-                  to={"/applications/me"}
-                  onClick={() => setShow(false)}
-                >
-                  {user && user.role === "Employer"
-                    ? "Applicants Applicatoin"
-                    : "Applications"}
-                </Link>
-              </li>
-              {user && user.role === "Employer" ? (
-                <>
-                  <li>
-                    <Link
-                      className="letterSpace"
-                      to={"/job/post"}
-                      onClick={() => setShow(false)}
-                    >
-                      Post New Job
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="letterSpace"
-                      to={"/job/me"}
-                      onClick={() => setShow(false)}
-                    >
-                      View Your Jobs
-                    </Link>
-                  </li>
-                </>
-              ) : (
-                <></>
-              )}
-              <Button onClick={handleLogout}>Log Out</Button>
-            </motion.ul>
-            <div className="hamburger px-4 lg:hidden mt-6 cursor-pointer">
-              <HamburgerMenuIcon
-                onClick={() => setShow(!show)}
-                className="size-8 hover:rotate-180 duration-300"
-              />
+            <div className="flex">
+              <motion.ul
+                initial={{ x: 150 }}
+                whileInView={{ x: 0 }}
+                className={
+                  !show
+                    ? "menu max-lg:hidden flex items-center p-6 gap-10"
+                    : "max-lg:block border mt-6 rounded-xl shadow-md space-y-4 show-menu menu p-4 "
+                }
+              >
+                <li>
+                  <Link
+                    className="letterSpace"
+                    to={"/"}
+                    onClick={() => setShow(false)}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="letterSpace"
+                    to={"/job/getall"}
+                    onClick={() => setShow(false)}
+                  >
+                    All Jobs
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="letterSpace"
+                    to={"/applications/me"}
+                    onClick={() => setShow(false)}
+                  >
+                    {user && user.role === "Employer"
+                      ? "Applicants Applicatoin"
+                      : "Applications"}
+                  </Link>
+                </li>
+                {user && user.role === "Employer" ? (
+                  <>
+                    <li>
+                      <Link
+                        className="letterSpace"
+                        to={"/job/post"}
+                        onClick={() => setShow(false)}
+                      >
+                        Post New Job
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="letterSpace"
+                        to={"/job/me"}
+                        onClick={() => setShow(false)}
+                      >
+                        View Your Jobs
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <></>
+                )}
+                <Button onClick={handleLogout}>Log Out</Button>
+              </motion.ul>
+              <div className="hamburger px-4 lg:hidden mt-6 cursor-pointer">
+                <HamburgerMenuIcon
+                  onClick={() => setShow(!show)}
+                  className="size-8 hover:rotate-180 duration-300"
+                />
+              </div>
             </div>
           </div>
         </div>
