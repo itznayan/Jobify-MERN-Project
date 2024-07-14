@@ -16,7 +16,11 @@ const HowItWorks = () => {
           <motion.div
             initial={{ x: -400, opacity: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2, type: "spring" }}
+            transition={{
+              duration: 1,
+              delay: 0.2,
+              type: "spring",
+            }}
             className="py-10"
           >
             <h2 className={`${styles.sectionHeadText} text-center`}>

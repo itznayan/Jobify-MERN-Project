@@ -11,7 +11,7 @@ const Home = () => {
     return <Navigate to={"/login"} />;
   }
   return (
-    <section>
+    <section className="bg-zinc-900">
       <HeroSection />
       <hr />
       <HowItWorks />
