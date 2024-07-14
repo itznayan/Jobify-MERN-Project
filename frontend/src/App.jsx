@@ -23,7 +23,10 @@ import { Context } from "./main";
 import { Button } from "./components/ui/button";
 import { Toaster } from "react-hot-toast";
 import "./index.css";
+import LocomotiveScroll from "locomotive-scroll";
+
 function App() {
+  const scroll = new LocomotiveScroll();
   const { isAuthorized, setIsAuthorized, setUser, user } = useContext(Context);
   useEffect(() => {
     const fetchUser = async () => {

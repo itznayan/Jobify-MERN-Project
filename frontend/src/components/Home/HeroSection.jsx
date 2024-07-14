@@ -9,21 +9,15 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className=" bg-gray-950"
+        className=" bg-gray-950 rounded-t-sm"
       >
         <div className="mx-auto h-full px-4 py-28 md:py-40 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
           <div className="flex flex-col items-center justify-between lg:flex-row">
             <div className="">
-              <motion.div
-                initial={{ x: -200, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="lg:max-w-xl lg:pr-5"
-              >
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.4 }}
+              <div className="lg:max-w-xl lg:pr-5">
+                <p
+                  data-scroll
+                  data-scroll-speed=".6"
                   className="flex text-sm uppercase text-gray-300"
                 >
                   <svg
@@ -39,13 +33,19 @@ const HeroSection = () => {
                     />
                   </svg>
                   An site for which find perfect jobs for you
-                </motion.p>
-                <h2 className="mb-6 max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug">
+                </p>
+                <h2
+                  data-scroll
+                  data-scroll-speed=".8"
+                  className="mb-6 max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug"
+                >
                   We make you look
                   <motion.span
-                    initial={{ scale: 0 }}
-                    animate={{ scale: [1, 0.8, 1.2, 1] }}
-                    transition={{ delay: 0.8 }}
+                    data-scroll
+                    data-scroll-speed="-1.15"
+                    initial={{ width: 0 }}
+                    animate={{ width: 320 }}
+                    transition={{ delay: 0.8, duration: 1 }}
                     className="my-1 inline-block border-b-8 border-white bg-orange-400 px-4 font-bold text-white"
                   >
                     different
@@ -55,11 +55,11 @@ const HeroSection = () => {
                   Identify the job that is an ideal match for your skills and
                   abilities.
                 </p>
-              </motion.div>
-              <motion.div
-                initial={{ x: -200, opacity: 0 }}
-                animate={{ x: 0, opacity: 1, scale: [1, 0.6, 1] }}
-                transition={{ duration: 0.4, delay: 1 }}
+              </div>
+              <div
+                data-scroll
+                data-scroll-speed="1.2"
+                data-scroll-direction="horizontal"
                 className="mt-10 flex flex-col items-center md:flex-row"
               >
                 <Link
@@ -89,7 +89,7 @@ const HeroSection = () => {
                     />
                   </svg>
                 </Link>
-              </motion.div>
+              </div>
             </div>
             <div className="relative hidden lg:ml-32 lg:block lg:w-1/2">
               <svg
