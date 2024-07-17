@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <div>
+    <div data-scroll-section>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -42,6 +42,7 @@ const HeroSection = () => {
                   We make you look
                   <motion.span
                     data-scroll
+                    data-scroll-section
                     data-scroll-speed="-1.15"
                     initial={{ width: 0 }}
                     animate={{ width: 320 }}

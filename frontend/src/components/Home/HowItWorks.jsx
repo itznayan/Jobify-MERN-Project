@@ -4,32 +4,41 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { textVariant } from "../../utils/motion";
-import { motion } from "framer-motion";
 import { styles } from "../../styles";
 import { MdAccountCircle, MdReviews } from "react-icons/md";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { timeline } from "@material-tailwind/react";
+import { motion } from "framer-motion";
+
 const HowItWorks = () => {
   return (
     <>
-      <div className="bg-[#1F2937]">
+      <div className="main bg-[#1F2937]">
         <div className="container">
-          <motion.div
-            initial={{ x: -400, opacity: 0 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 1,
-              delay: 0.2,
-              type: "spring",
-            }}
-            className="py-10"
-          >
+          <div className="head py-10">
             <h2 className={`${styles.sectionHeadText} text-center`}>
-              How We Work{" "}
+              <div>
+                {"How We Work".split(" ").map((item, index) => (
+                  <motion.span
+                    className="inline-block"
+                    initial={{ opacity: 0, x: -200 }}
+                    whileInView={{ opacity: 1, x: 0, letterSpacing: 10 }}
+                    transition={{
+                      delay: 0.35 * index,
+                      type: "spring",
+                    }}
+                    key={index}
+                  >
+                    {item}&nbsp;{" "}
+                  </motion.span>
+                ))}
+              </div>
             </h2>
             <p className={`${styles.sectionSubText} text-center`}>
               Building Large and Effective Systems
             </p>
-          </motion.div>
+          </div>
 
           <VerticalTimeline>
             <VerticalTimelineElement
