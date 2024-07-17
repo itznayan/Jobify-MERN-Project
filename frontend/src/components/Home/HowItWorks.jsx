@@ -6,15 +6,22 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../../styles";
 import { MdAccountCircle, MdReviews } from "react-icons/md";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { timeline } from "@material-tailwind/react";
-import { motion } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 const HowItWorks = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView]);
   return (
     <>
-      <div className="main bg-[#1F2937]">
+      <div ref={ref} className="main bg-[#1F2937]">
         <div className="container">
           <div className="head py-10">
             <h2 className={`${styles.sectionHeadText} text-center`}>
@@ -22,15 +29,19 @@ const HowItWorks = () => {
                 {"How We Work".split(" ").map((item, index) => (
                   <motion.span
                     className="inline-block"
-                    initial={{ opacity: 0, x: -200 }}
-                    whileInView={{ opacity: 1, x: 0, letterSpacing: 10 }}
+                    variants={{
+                      hidden: { opacity: 0, x: -200 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    initial="hidden"
+                    animate={mainControls}
                     transition={{
                       delay: 0.35 * index,
                       type: "spring",
                     }}
                     key={index}
                   >
-                    {item}&nbsp;{" "}
+                    {item}&nbsp;
                   </motion.span>
                 ))}
               </div>

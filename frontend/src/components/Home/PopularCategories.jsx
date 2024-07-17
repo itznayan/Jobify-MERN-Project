@@ -16,10 +16,21 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import { motion } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+import { useEffect, useRef } from "react";
 
 const PopularCategories = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const Controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      Controls.start("visible");
+    }
+  }, [isInView]);
+
   const categories = [
     {
       id: 1,
@@ -80,12 +91,16 @@ const PopularCategories = () => {
   ];
   return (
     <>
-      <div className="relative categories text-white  ">
+      <div ref={ref} className="relative categories text-white  ">
         <motion.div
-          initial={{ paddingLeft: "100vw" }}
-          whileInView={{ paddingLeft: "1vw" }}
+          variants={{
+            hidden: { paddingLeft: "100vw" },
+            visible: { paddingLeft: "0vw" },         
+          }}
+          initial="hidden"
+          animate={Controls}
           transition={{ duration: 1 }}
-          className="textentry max-sm:hidden absolute top-14 right-80 h-24  bg-zinc-900"
+          className="inline-block textentry max-sm:hidden absolute top-14 right-80 h-24  bg-zinc-900"
         ></motion.div>
         <h3 className="font-['verdana'] p-16 text-4xl md:text-6xl xl:text-8xl ">
           POPULAR CATEGORIES
