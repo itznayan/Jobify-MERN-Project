@@ -79,9 +79,9 @@ const PostJob = () => {
   return (
     <>
       <div className="job_post page">
-        <div className="px-20 py-10">
-          <h3 className="text-center p-4 text-4xl">POST NEW JOB</h3>
+        <div className="px-4 py-10">
           <form onSubmit={handleJobPost} className="border-2 py-10 px-20 mb-10">
+            <h3 className="text-center p-4 text-4xl">POST NEW JOB</h3>
             <div className="wrapper py-10 grid max-sm:grid-cols-1 sm:grid-cols-2 gap-10">
               <Input
                 type="text"

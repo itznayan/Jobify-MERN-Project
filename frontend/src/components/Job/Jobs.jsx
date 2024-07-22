@@ -46,7 +46,7 @@ const Jobs = () => {
           </motion.span>
         ))}
       </h1>
-      <div className="px-10 py-20">
+      <div className="flex gap-10 max-sm:flex-col px-10 py-20">
         {jobs.jobs &&
           jobs.jobs.map((element) => {
             return (
@@ -54,7 +54,9 @@ const Jobs = () => {
                 className="card py-8 px-4 flex flex-col justify-center lg:w-[30%] items-center rounded-3xl border-2 shadow-2xl "
                 key={element._id}
               >
-                <h2 className="text-4xl text-black py-2">{element.title}</h2>
+                <h2 className="text-4xl text-center text-black py-2">
+                  {element.title}
+                </h2>
                 <p className="text-xl py-2">{element.category}</p>
                 <p className="text-lg py-2">{element.country}</p>
 
