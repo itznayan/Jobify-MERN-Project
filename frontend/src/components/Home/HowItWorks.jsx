@@ -21,7 +21,7 @@ const HowItWorks = () => {
   }, [isInView]);
   return (
     <>
-      <div ref={ref} className="main bg-[#1F2937]">
+      <div ref={ref} className="main pb-20 rounded-b-[80px] bg-[#1F2937]">
         <div className="container">
           <div className="head py-10">
             <h2 className={`${styles.sectionHeadText} text-center`}>

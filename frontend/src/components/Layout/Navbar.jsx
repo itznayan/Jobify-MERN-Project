@@ -107,7 +107,7 @@ const Navbar = () => {
               <div className="hamburger px-4 lg:hidden mt-6 cursor-pointer">
                 <HamburgerMenuIcon
                   onClick={() => setShow(!show)}
-                  className="size-8 hover:rotate-180 duration-300"
+                  className="size-8 mb-2 hover:rotate-180 duration-300"
                 />
               </div>
             </div>
