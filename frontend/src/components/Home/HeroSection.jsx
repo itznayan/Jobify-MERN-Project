@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import HyperText from "@/components/magicui/hyper-text";
 
 const HeroSection = () => {
   return (
@@ -33,9 +34,12 @@ const HeroSection = () => {
                 <h2
                   data-scroll
                   data-scroll-speed=".8"
-                  className="mb-6 max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug"
+                  className="mb-6  max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug"
                 >
-                  We make you look
+                  <HyperText
+                    className="max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug"
+                    text="We make you look"
+                  />
                   <motion.span
                     data-scroll
                     data-scroll-section
@@ -48,6 +52,7 @@ const HeroSection = () => {
                     different
                   </motion.span>
                 </h2>
+
                 <p className="text-base text-gray-400">
                   Identify the job that is an ideal match for your skills and
                   abilities.

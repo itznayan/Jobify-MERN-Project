@@ -19,7 +19,7 @@
     "axios": "^1.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.2",
+    "framer-motion": "^11.3.28",
     "locomotive-scroll": "^5.0.0-beta.13",
     "lucide-react": "^0.407.0",
     "next-themes": "^0.3.0",
@@ -31,7 +31,7 @@
     "react-router-dom": "^6.24.1",
     "react-vertical-timeline-component": "^3.6.0",
     "sonner": "^1.5.0",
-    "tailwind-merge": "^2.4.0",
+    "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
@@ -39,12 +39,13 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
+    "daisyui": "^4.12.10",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "postcss": "^8.4.39",
-    "tailwindcss": "^3.4.4",
+    "tailwindcss": "^3.4.10",
     "vite": "^5.3.1"
   }
 }

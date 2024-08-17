@@ -7,6 +7,8 @@ import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
 import { Input } from "./../ui/input";
 import { Textarea } from "./../ui/textarea";
+import noJob from "../../../public/no-job.png";
+
 const MyJobs = () => {
   const [myJobs, setMyJobs] = useState([]);
   const [editingMode, setEditingMode] = useState(null);
@@ -349,9 +351,22 @@ const MyJobs = () => {
               </div>
             </>
           ) : (
-            <p>
-              You've not posted any job or may be you deleted all of your jobs!
-            </p>
+            <>
+              <div className="text-center p-2 text-white w-full text-xl ">
+                <div className="h-96 ">
+                  <img
+                    src={noJob}
+                    className="w-full mix-blend-multiply h-full object-contain"
+                    alt=""
+                  />
+                </div>
+                <p className="text-center p-2 rounded-xl bg-gray-500">
+                  You've not posted any job or may be you deleted all of your
+                  jobs!
+                </p>
+              </div>
+              <br />
+            </>
           )}
         </div>
       </div>

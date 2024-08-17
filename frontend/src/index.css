@@ -4,8 +4,10 @@
 
 
 .letterSpace {
-  @apply hover:tracking-[4px] font-normal text-lg duration-300
+  @apply hover:tracking-[2px] font-normal text-lg duration-300
 }
+
+
 
 @layer base {
   :root {

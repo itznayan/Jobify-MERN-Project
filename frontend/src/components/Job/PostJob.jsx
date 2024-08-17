@@ -6,6 +6,7 @@ import { Context } from "../../main";
 import { Input } from "./../ui/input";
 import { Textarea } from "./../ui/textarea";
 import { Button } from "./../ui/button";
+import { Select, Option } from "@material-tailwind/react";
 
 const PostJob = () => {
   const [title, setTitle] = useState("");
@@ -90,7 +91,7 @@ const PostJob = () => {
                 placeholder="Job Title"
               />
               <select
-                className="p-2 bg-zinc-200 rounded-xl"
+                className="select w-full max-w-xs border-gray-200 border-2 rounded-xl"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
@@ -142,6 +143,7 @@ const PostJob = () => {
             />
             <div className="salary_wrapper  space-y-4">
               <select
+                className="select border-2 p-2 rounded-3xl"
                 value={salaryType}
                 onChange={(e) => setSalaryType(e.target.value)}
               >

@@ -95,11 +95,11 @@ const PopularCategories = () => {
         <motion.div
           variants={{
             hidden: { paddingLeft: "100vw" },
-            visible: { paddingLeft: "0vw" },         
+            visible: { paddingLeft: "0vw" },
           }}
           initial="hidden"
           animate={Controls}
-          transition={{ duration: 1 }}
+          transition={{ duration: 2 }}
           className="inline-block textentry max-sm:hidden absolute top-14 right-80 h-24  bg-zinc-900"
         ></motion.div>
         <h3 className="font-['verdana'] p-16 text-4xl md:text-6xl xl:text-8xl ">
@@ -110,7 +110,7 @@ const PopularCategories = () => {
           {categories.map((item, index) => (
             <div key={index}>
               <Tilt>
-                <Card className="mt-6 w-96 bg-zinc-950 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
+                <Card className="duration-300 hover:scale-95 mt-6 w-96 bg-zinc-950 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
                   <CardHeader
                     color="blue-gray"
                     className="relative h-56  flex justify-center items-center"

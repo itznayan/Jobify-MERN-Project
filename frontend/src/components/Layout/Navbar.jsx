@@ -45,8 +45,8 @@ const Navbar = () => {
                 animate={{ x: 0 }}
                 className={
                   !show
-                    ? "menu max-lg:hidden flex items-center p-6 gap-10"
-                    : "max-lg:block border mt-6 rounded-xl shadow-md space-y-4 show-menu menu p-4 "
+                    ? "menu  max-lg:hidden flex items-center p-6 gap-10"
+                    : "max-lg:block bg-white absolute right-20 z-10 border mt-6 rounded-xl shadow-md space-y-4 show-menu menu p-4 "
                 }
               >
                 <li>
