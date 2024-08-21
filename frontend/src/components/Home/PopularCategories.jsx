@@ -123,12 +123,14 @@ const PopularCategories = () => {
                   </CardHeader>
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-2">
-                      <div className="flex items-center gap-2 ">
+                      <div className="flex items-center gap-2 text-white">
                         {item.icon}
                         {item.title}
                       </div>
                     </Typography>
-                    <Typography>{item.subTitle}</Typography>
+                    <Typography className="text-gray-300">
+                      {item.subTitle}
+                    </Typography>
                   </CardBody>
 
                   <CardFooter className="-ml-6">
