@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,6 @@ import { Context } from "../../main";
 import { Input } from "./../ui/input";
 import { Textarea } from "./../ui/textarea";
 import { Button } from "./../ui/button";
-import { Select, Option } from "@material-tailwind/react";
 
 const PostJob = () => {
   const [title, setTitle] = useState("");
@@ -66,6 +65,7 @@ const PostJob = () => {
       )
       .then((res) => {
         toast.success(res.data.message);
+        navigateTo("/job");
       })
       .catch((err) => {
         toast.error(err.response.data.message);
