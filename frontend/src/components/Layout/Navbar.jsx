@@ -14,7 +14,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.get(
-        "https://jobify-mern-x3g5.onrender.com/api/v1/user/logout",
+        "http://localhost:4000/api/v1/user/logout",
         { withCredentials: true }
       );
       toast(response.data.message);

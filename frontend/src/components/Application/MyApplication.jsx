@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import ResumeModal from "./ResumeModal";
 import { Button } from "../ui/button";
+import noJob from "../../../public/no-job.png";
 
 const MyApplication = () => {
   const [applications, setApplications] = useState([]);
@@ -22,7 +23,7 @@ const MyApplication = () => {
             : "jobseeker/getall";
 
         const res = await axios.get(
-          `https://jobify-mern-x3g5.onrender.com/api/v1/application/${endpoint}`,
+          `http://localhost:4000/api/v1/application/${endpoint}`,
           {
             withCredentials: true,
           }
@@ -43,7 +44,7 @@ const MyApplication = () => {
   const deleteApplication = async (id) => {
     try {
       const res = await axios.delete(
-        `https://jobify-mern-x3g5.onrender.com/api/v1/application/delete/${id}`,
+        `http://localhost:4000/api/v1/application/delete/${id}`,
         {
           withCredentials: true,
         }
@@ -92,9 +93,31 @@ const MyApplication = () => {
           <h3 className="text-3xl text-center max-sm:mb-10">
             Applications from Job Seekers
           </h3>
-          {applications.map((elem) => (
-            <EmployerCard key={elem._id} elem={elem} openModel={openModel} />
-          ))}
+          {applications.length <= 0 ? (
+            <div className="text-center p-2 text-white w-full text-xl ">
+              <div className="h-96 ">
+                <img
+                  src={noJob}
+                  className="w-full mix-blend-multiply h-full object-contain"
+                  alt=""
+                />
+              </div>
+              <p className="text-center p-2 rounded-xl bg-gray-500">
+                There are no applicant submissions at this time.
+              </p>
+            </div>
+          ) : (
+            <div>
+              {" "}
+              {applications.map((elem) => (
+                <EmployerCard
+                  key={elem._id}
+                  elem={elem}
+                  openModel={openModel}
+                />
+              ))}
+            </div>
+          )}
         </div>
       )}
       {modelOpen && (

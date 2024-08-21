@@ -20,7 +20,7 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "https://jobify-mern-x3g5.onrender.com/api/v1/job/getmyjobs",
+          "http://localhost:4000/api/v1/job/getmyjobs",
           { withCredentials: true }
         );
         setMyJobs(data.myJobs);
@@ -50,13 +50,9 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(
-        `https://jobify-mern-x3g5.onrender.com/api/v1/job/update/${jobId}`,
-        updatedJob,
-        {
-          withCredentials: true,
-        }
-      )
+      .put(`http://localhost:4000/api/v1/job/update/${jobId}`, updatedJob, {
+        withCredentials: true,
+      })
       .then((res) => {
         toast.success(res.data.message);
         setEditingMode(null);
@@ -69,12 +65,9 @@ const MyJobs = () => {
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(
-        `https://jobify-mern-x3g5.onrender.com/api/v1/job/delete/${jobId}`,
-        {
-          withCredentials: true,
-        }
-      )
+      .delete(`http://localhost:4000/api/v1/job/delete/${jobId}`, {
+        withCredentials: true,
+      })
       .then((res) => {
         toast.success(res.data.message);
         setMyJobs((prevJobs) => prevJobs.filter((job) => job._id !== jobId));
@@ -96,13 +89,13 @@ const MyJobs = () => {
   return (
     <>
       <div className="myJobs page ">
-        <div className="w-full relative  bg-black/10 rounded-3xl">
+        <div className="w-full relative bg-black/10 rounded-3xl">
           <h1 className="text-center p-6   text-3xl font-thin font-['verdana']">
             Your Posted Jobs
           </h1>
           {myJobs.length > 0 ? (
             <>
-              <div className="banner container flex justify-center text-xl  ">
+              <div className="banner container flex-row justify-center text-xl  ">
                 {myJobs.map((element) => (
                   <div
                     className="card p-10  bg-zinc/40 rounded-xl "
@@ -282,7 +275,7 @@ const MyJobs = () => {
                           </select>
                         </div>
                       </div>
-                      <div className="long_field ">
+                      <div className="long_field">
                         <div className="space-y-4">
                           <span>Description:</span>{" "}
                           <Textarea
@@ -348,7 +341,7 @@ const MyJobs = () => {
                       </div>
                       <button
                         onClick={() => handleDeleteJob(element._id)}
-                        className="ml-96 smky-btn3 relative hover:text-black py-2 px-6 after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-20 after:z-[-20] after:bg-[#d33e24] after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-gray-600"
+                        className="-left-40 bottom-12 ml-96 smky-btn3 relative hover:text-black py-2 px-6 after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-20 after:z-[-20] after:bg-[#d33e24] after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-gray-600"
                       >
                         Delete
                       </button>

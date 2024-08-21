@@ -35,7 +35,7 @@ const PostJob = () => {
     }
     await axios
       .post(
-        "https://jobify-mern-x3g5.onrender.com/api/v1/job/post",
+        "http://localhost:4000/api/v1/job/post",
         fixedSalary.length >= 4
           ? {
               title,
@@ -65,7 +65,7 @@ const PostJob = () => {
       )
       .then((res) => {
         toast.success(res.data.message);
-        navigateTo("/job");
+        navigateTo("/job/me");
       })
       .catch((err) => {
         toast.error(err.response.data.message);

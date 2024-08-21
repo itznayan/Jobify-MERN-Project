@@ -13,7 +13,7 @@ const JobDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://jobify-mern-x3g5.onrender.com/api/v1/job/${id}`, {
+      .get(`http://localhost:4000/api/v1/job/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
