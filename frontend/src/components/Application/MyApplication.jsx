@@ -22,7 +22,7 @@ const MyApplication = () => {
             : "jobseeker/getall";
 
         const res = await axios.get(
-          `http://localhost:4000/api/v1/application/${endpoint}`,
+          `https://jobify-mern-x3g5.onrender.com/api/v1/application/${endpoint}`,
           {
             withCredentials: true,
           }
@@ -43,7 +43,7 @@ const MyApplication = () => {
   const deleteApplication = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/api/v1/application/delete/${id}`,
+        `https://jobify-mern-x3g5.onrender.com/api/v1/application/delete/${id}`,
         {
           withCredentials: true,
         }

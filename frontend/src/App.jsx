@@ -31,7 +31,7 @@ function App() {
     const fetchUser = async () => {
       try {
         const responce = await axios.get(
-          "http://localhost:4000/api/v1/user/getuser",
+          "https://jobify-mern-x3g5.onrender.com/api/v1/user/getuser",
           { withCredentials: true }
         );
         setUser(responce.data.user);
