@@ -48,19 +48,6 @@ const Jobs = () => {
         ))}
       </h1>
       {jobs.length == 0 ? (
-        <div className="text-center p-2 text-white w-full text-xl ">
-          <div className="h-96 ">
-            <img
-              src={noJob}
-              className="w-full mix-blend-multiply h-full object-contain"
-              alt=""
-            />
-          </div>
-          <p className="text-center p-2 text-2xl rounded-xl bg-gray-500">
-            Currently, there are no available job opportunities !
-          </p>
-        </div>
-      ) : (
         <div className="flex gap-10 max-sm:flex-col px-10 py-20">
           {jobs.jobs &&
             jobs.jobs.map((element) => {
@@ -83,6 +70,19 @@ const Jobs = () => {
                 </div>
               );
             })}
+        </div>
+      ) : (
+        <div className="text-center p-2 text-white w-full text-xl ">
+          <div className="h-96 ">
+            <img
+              src={noJob}
+              className="w-full mix-blend-multiply h-full object-contain"
+              alt=""
+            />
+          </div>
+          <p className="text-center p-2 text-2xl rounded-xl bg-gray-500">
+            Currently, there are no available job opportunities !
+          </p>
         </div>
       )}
     </div>
