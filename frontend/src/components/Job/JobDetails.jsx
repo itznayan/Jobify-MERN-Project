@@ -33,29 +33,29 @@ const JobDetails = () => {
       <div className="container">
         <h3 className="text-center text-3xl font-bold">Job Details</h3>
         <div className="banner space-y-4 text-xl px-10 py-14 font-semibold">
-          <p>
+          <p className="font-bold">
             Title: <span className="font-normal"> {job.title}</span>
           </p>
-          <p>
+          <p className="font-bold">
             Category: <span className="font-normal">{job.category}</span>
           </p>
-          <p>
+          <p className="font-bold">
             Country: <span className="font-normal">{job.country}</span>
           </p>
-          <p>
+          <p className="font-bold">
             City: <span className="font-normal">{job.city}</span>
           </p>
-          <p>
+          <p className="font-bold">
             Location: <span className="font-normal">{job.location}</span>
           </p>
-          <p>
+          <p className="font-bold">
             Description: <span className="font-normal">{job.description}</span>
           </p>
-          <p>
+          <p className="font-bold">
             Job Posted On:{" "}
             <span className="font-normal">{job.jobPostedOn}</span>
           </p>
-          <p>
+          <p className="font-bold">
             Salary:{" "}
             {job.fixedSalary ? (
               <span className="font-normal">{job.fixedSalary}</span>
