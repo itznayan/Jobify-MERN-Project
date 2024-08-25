@@ -1,2 +1,0 @@
-main: https://jobify-mern-x3g5.onrender.com
-local:http://localhost:4000
