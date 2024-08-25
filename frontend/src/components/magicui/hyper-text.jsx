@@ -10,7 +10,7 @@ const getRandomInt = (max) => Math.floor(Math.random() * max);
 
 export default function HyperText({
   text,
-  duration = 2000,
+  duration = 20000,
 
   framerProps = {
     initial: { opacity: 0, y: -10 },
@@ -45,7 +45,7 @@ export default function HyperText({
               ? l
               : i <= interations.current
               ? text[i]
-              : alphabets[getRandomInt(13)]
+              : alphabets[getRandomInt(1)]
           )
         );
         interations.current = interations.current + 0.1;
