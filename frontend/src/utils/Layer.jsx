@@ -16,7 +16,7 @@ const Layer = (WrappedComponent) => {
   return (props) => (
     <>
       <motion.div
-        className="fixed w-full flex"
+        className="fixed z-auto w-full flex"
         initial="hidden"
         animate="visible"
         exit="exit"
