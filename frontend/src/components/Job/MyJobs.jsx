@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Input } from "./../ui/input";
 import { Textarea } from "./../ui/textarea";
 import noJob from "../../../public/no-job.png";
+import Layer from "../../utils/Layer";
 
 const MyJobs = () => {
   const [myJobs, setMyJobs] = useState([]);
@@ -381,4 +382,4 @@ const MyJobs = () => {
   );
 };
 
-export default MyJobs;
+export default Layer(MyJobs);

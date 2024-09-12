@@ -4,6 +4,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../main";
 import { Button } from "./../ui/button";
+import Layer from "../../utils/Layer";
+
 const JobDetails = () => {
   const { id } = useParams();
   const [job, setJob] = useState({});
@@ -78,4 +80,4 @@ const JobDetails = () => {
   );
 };
 
-export default JobDetails;
+export default Layer(JobDetails);

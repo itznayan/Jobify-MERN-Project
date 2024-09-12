@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ResumeModal from "./ResumeModal";
 import { Button } from "../ui/button";
 import noJob from "../../../public/no-job.png";
+import Layer from "../../utils/Layer";
 
 const MyApplication = () => {
   const [applications, setApplications] = useState([]);
@@ -127,7 +128,7 @@ const MyApplication = () => {
   );
 };
 
-export default MyApplication;
+export default Layer(MyApplication);
 
 const JobSeekerCard = ({ elem, deleteApplication, openModel }) => {
   return (

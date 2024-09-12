@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
-
+import Layer from "../../utils/Layer";
 const Application = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -163,4 +163,4 @@ const Application = () => {
   );
 };
 
-export default Application;
+export default Layer(Application);

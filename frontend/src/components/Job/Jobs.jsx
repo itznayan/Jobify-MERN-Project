@@ -5,7 +5,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { Button } from "@material-tailwind/react";
 import noJob from "../../../public/no-job.png";
-
+import Layer from "../../utils/Layer";
 const Jobs = () => {
   const motoinVarients = {
     initial: { opacity: 0, scale: 0.4, x: 100, y: 50 },
@@ -89,4 +89,4 @@ const Jobs = () => {
   );
 };
 
-export default Jobs;
+export default Layer(Jobs);

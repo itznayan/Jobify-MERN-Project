@@ -5,14 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
 import { Button } from "../ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import Layer from "../../utils/Layer";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 
@@ -168,4 +161,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Layer(Register);

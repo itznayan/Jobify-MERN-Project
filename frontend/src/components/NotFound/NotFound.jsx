@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
+import Layer from "../../utils/Layer";
 
 const NotFound = () => {
   const [seconds, setSeconds] = useState(5); // Initial countdown seconds
@@ -43,4 +44,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Layer(NotFound);

@@ -5,17 +5,10 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
 import { Button } from "../ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import Magnetic from "./../../utils/Magnetic";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
-
+import Layer from "../../utils/Layer";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -126,7 +119,9 @@ const Login = () => {
                   Login
                 </Button>
                 <Link to={"/register"}>
-                  <Button>Register</Button>
+                  <Magnetic>
+                    <Button>Register</Button>
+                  </Magnetic>
                 </Link>
               </div>
             </form>
@@ -141,4 +136,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Layer(Login);
