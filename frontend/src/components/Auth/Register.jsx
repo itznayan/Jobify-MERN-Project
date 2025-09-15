@@ -8,7 +8,8 @@ import { Button } from "../ui/button";
 import Layer from "../../utils/Layer";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
-
+import Lottie from "lottie-react";
+import animationData from "../../assets/Sign up Scene.json";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -22,7 +23,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://jobify-mern-x3g5.onrender.com/api/v1/user/register",
+        "http://localhost:4000/api/v1/user/register",
         { name, phone, email, role, password },
         {
           headers: {
@@ -49,17 +50,24 @@ const Register = () => {
 
   return (
     <>
-      <h1 className=" mt-4 sm:mb-10 text-5xl font-bold text-center max-sm:text-2xl ">
-        Welcome To Jobify
-      </h1>
       <img className="sm:hidden " src="/Register.jpg" alt="Login form" />
 
-      <div className="grid items-center grid-cols-2 px-10 authPage">
-        <div className=" items-center border shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] z-10 max-sm:col-span-2 h-fit rounded-2xl">
-          <div className="p-6 header">
-            <h3 className="p-2 text-4xl font-semibold text-start">
-              Create A New Account
-            </h3>
+      <div className="my-12 grid grid-cols-2 justify-start px-10 authPage">
+        <div className="relative -top-14  flex justify-center items-start">
+          <Lottie
+            animationData={animationData}
+            loop={true} // ✅ repeat forever
+            autoplay={true} // ✅ start automatically
+            style={{ width: 480, height: 500 }}
+          />
+
+          {/* <img className="max-sm:hidden" src="/Register.jpg" alt="Form image" /> */}
+        </div>
+        <div className="items-center border max-sm:col-span-2 h-fit rounded-2xl">
+          <h3 className="p-2 text-4xl font-semibold text-center">
+            Create A New Account
+          </h3>
+          <div className="p-6 header flex justify-center items-end mt-14">
             <form className=" max-w-fit border drop-shadow-sm rounded-xl">
               <div className="flex items-center justify-center gap-10 p-2 inputTag">
                 <Label className="flex items-center gap-2">
@@ -151,10 +159,6 @@ const Register = () => {
               </div>
             </form>
           </div>
-        </div>
-
-        <div>
-          <img className="max-sm:hidden" src="/Register.jpg" alt="Form image" />
         </div>
       </div>
     </>

@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../../main";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 import ResumeModal from "./ResumeModal";
 import { Button } from "../ui/button";
 import noJob from "../../../public/no-job.png";
@@ -12,8 +11,7 @@ const MyApplication = () => {
   const [applications, setApplications] = useState([]);
   const [modelOpen, setModelOpen] = useState(false);
   const [resumeImageUrl, setResumeImageUrl] = useState("");
-  const { user, isAuthorized } = useContext(Context);
-  const navigate = useNavigate();
+  const { user } = useContext(Context);
 
   useEffect(() => {
     const fetchApplications = async () => {
@@ -24,7 +22,7 @@ const MyApplication = () => {
             : "jobseeker/getall";
 
         const res = await axios.get(
-          `https://jobify-mern-x3g5.onrender.com/api/v1/application/${endpoint}`,
+          `http://localhost:4000/api/v1/application/${endpoint}`,
           {
             withCredentials: true,
           }
@@ -35,17 +33,13 @@ const MyApplication = () => {
       }
     };
 
-    if (isAuthorized) {
-      fetchApplications();
-    } else {
-      navigate("/login");
-    }
-  }, [isAuthorized, user, navigate]);
+    fetchApplications();
+  }, [user]);
 
   const deleteApplication = async (id) => {
     try {
       const res = await axios.delete(
-        `https://jobify-mern-x3g5.onrender.com/api/v1/application/delete/${id}`,
+        `http://localhost:4000/api/v1/application/delete/${id}`,
         {
           withCredentials: true,
         }

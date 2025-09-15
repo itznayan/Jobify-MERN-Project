@@ -11,11 +11,11 @@ const JobDetails = () => {
   const [job, setJob] = useState({});
   const navigateTo = useNavigate();
 
-  const { isAuthorized, user } = useContext(Context);
+  const { user } = useContext(Context);
 
   useEffect(() => {
     axios
-      .get(`https://jobify-mern-x3g5.onrender.com/api/v1/job/${id}`, {
+      .get(`http://localhost:4000/api/v1/job/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -25,10 +25,6 @@ const JobDetails = () => {
         navigateTo("/notfound");
       });
   }, []);
-
-  if (!isAuthorized) {
-    navigateTo("/login");
-  }
 
   return (
     <section className="jobDetail page">

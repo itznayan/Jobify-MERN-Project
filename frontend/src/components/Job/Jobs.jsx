@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Context } from "../../main";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { Button } from "@material-tailwind/react";
@@ -12,12 +11,11 @@ const Jobs = () => {
     animate: { opacity: 1, scale: 1, x: 0, y: 0 },
   };
   const [jobs, setJobs] = useState([]);
-  const { isAuthorized } = useContext(Context);
-  const navigate = useNavigate();
+
   useEffect(() => {
     try {
       axios
-        .get("https://jobify-mern-x3g5.onrender.com/api/v1/job/getall", {
+        .get("http://localhost:4000/api/v1/job/getall", {
           withCredentials: true,
         })
         .then((res) => {
@@ -27,10 +25,6 @@ const Jobs = () => {
       console.log(error);
     }
   }, []);
-
-  if (!isAuthorized) {
-    navigate("/login");
-  }
 
   return (
     <div className=" jobs-page py-10 px-20">

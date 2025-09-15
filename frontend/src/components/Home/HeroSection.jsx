@@ -10,10 +10,10 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className=" bg-gray-950 rounded-t-sm"
+        className="  rounded-t-sm"
       >
         <div className="mx-auto h-full px-4 py-28 md:py-40 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
-          <div className="flex flex-col items-center justify-between lg:flex-row">
+          <div className="flex flex-col text-black items-center justify-between lg:flex-row">
             <div className="">
               <div className="lg:max-w-xl lg:pr-5">
                 <p
@@ -37,23 +37,21 @@ const HeroSection = () => {
                   className="mb-6  max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug"
                 >
                   <HyperText
-                    className="max-w-lg text-5xl font-bold leading-snug tracking-tight text-white sm:text-7xl sm:leading-snug"
-                    text="We make you look"
+                    className="capitalize max-w-lg text-5xl font-bold leading-snug tracking-tight text-black sm:text-4xl sm:leading-snug"
+                    text="Don't just search start"
                   />
+
                   <motion.span
                     data-scroll
                     data-scroll-section
                     data-scroll-speed="-1.15"
-                    initial={{ width: 0 }}
-                    animate={{ width: 320 }}
-                    transition={{ delay: 0.8, duration: 1 }}
-                    className="my-1 inline-block border-b-8 border-white bg-orange-400 px-4 font-bold text-white"
+                    className="my-1 inline-block border-b-8 border-white bg-orange-400 px-4 font-bold text-7xl text-white"
                   >
-                    different
+                    FINDING A JOB
                   </motion.span>
                 </h2>
 
-                <p className="text-base text-gray-400">
+                <p className="text-base text-gray-800">
                   Identify the job that is an ideal match for your skills and
                   abilities.
                 </p>
@@ -73,7 +71,7 @@ const HeroSection = () => {
                 <Link
                   to={"./"}
                   aria-label=""
-                  className="group inline-flex items-center font-semibold text-white"
+                  className="group inline-flex items-center font-semibold text-stone-800"
                 >
                   Watch how it works
                   <svg

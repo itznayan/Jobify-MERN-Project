@@ -91,7 +91,7 @@ const PopularCategories = () => {
   ];
   return (
     <>
-      <div ref={ref} className="relative categories text-white  ">
+      <div ref={ref} className="relative categories text-stone-600  ">
         <motion.div
           variants={{
             hidden: { paddingLeft: "100vw" },

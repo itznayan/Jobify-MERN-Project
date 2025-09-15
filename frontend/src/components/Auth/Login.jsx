@@ -9,6 +9,9 @@ import Magnetic from "./../../utils/Magnetic";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 import Layer from "../../utils/Layer";
+import Lottie from "lottie-react";
+import animationData from "../../../public/Login.json";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://jobify-mern-x3g5.onrender.com/api/v1/user/login",
+        "http://localhost:4000/api/v1/user/login",
         { email, role, password },
         {
           headers: {
@@ -46,17 +49,31 @@ const Login = () => {
 
   return (
     <>
-      <h1 className=" mt-4 sm:mb-10 text-5xl font-bold text-center max-sm:text-2xl ">
-        Welcome Back To Jobify
-      </h1>
-      <img className="sm:hidden " src="/Login.jpg" alt="Login form" />
+      <img
+        className="sm:hidden size-[0.65]  "
+        src="/Login.jpg"
+        alt="Login form"
+      />
 
-      <div className="grid items-center grid-cols-2 px-10 authPage">
-        <div className=" items-center border shadow-[5px_5px_0px_0px_rgba(109,40,217)] z-10 max-sm:col-span-2 h-fit rounded-2xl">
-          <div className="p-6 header">
-            <h3 className="p-2 text-4xl font-semibold text-start">
-              Login To Your Account
-            </h3>
+      <div className="grid items-center m-6  grid-cols-2 px-10 authPage">
+        <div className="justify-center items-center flex ">
+          {/* <img
+            className="max-sm:hidden relative"
+            src="/Login.jpg"
+            alt="Form image"
+          /> */}
+          <Lottie
+            animationData={animationData}
+            loop={true} // ✅ repeat forever
+            autoplay={true} // ✅ start automatically
+            style={{ width: 480, height: 500 }}
+          />
+        </div>{" "}
+        <div className=" mt-20 items-center border max-sm:col-span-2 h-fit rounded-2xl">
+          <h3 className="p-2 text-4xl relative bottom-14 text-center  font-semibold ">
+            Login To Your Account
+          </h3>
+          <div className="p-6 header flex justify-center">
             <form className=" max-w-fit border drop-shadow-sm rounded-xl">
               <div className="flex items-center justify-center gap-10 p-2 inputTag">
                 <Label className="flex items-center gap-2">
@@ -81,10 +98,10 @@ const Login = () => {
                 </div>
               </div>
 
-              <div className="grid items-center grid-cols-2 gap-4 p-2 inputTag max-sm:grid-cols-1 ">
+              <div className="grid  items-center  w-full  grid-cols-1 p-2 inputTag max-sm:grid-cols-1 ">
                 <div>
-                  <Label className="p-2">Email Address</Label>
-                  <div className="p-1">
+                  <Label className="p-2   ">Email Address</Label>
+                  <div className="p-1 w-full ">
                     <Input
                       required
                       type="email"
@@ -96,7 +113,7 @@ const Login = () => {
                 </div>
               </div>
 
-              <div className="grid items-center grid-cols-2 gap-4 p-2 inputTag max-sm:grid-cols-1 ">
+              <div className="grid items-center  gap-4 p-2 inputTag max-sm:grid-cols-1 ">
                 <div>
                   <Label className="p-2">Password</Label>
                   <div className="p-1">
@@ -126,10 +143,6 @@ const Login = () => {
               </div>
             </form>
           </div>
-        </div>
-
-        <div>
-          <img className="max-sm:hidden" src="/Login.jpg" alt="Form image" />
         </div>
       </div>
     </>

@@ -1,18 +1,12 @@
-import React, { useContext } from "react";
-import { Context } from "../../main";
-import { Navigate } from "react-router-dom";
 import HeroSection from "./HeroSection";
 import HowItWorks from "./HowItWorks";
 import PopularCategories from "./PopularCategories";
 import PopularCompanies from "./PopularCompanies";
+import Layer from "../../utils/Layer";
 
 const Home = () => {
-  const { isAuthorized } = useContext(Context);
-  if (!isAuthorized) {
-    return <Navigate to={"/login"} />;
-  }
   return (
-    <section className="bg-zinc-900">
+    <section className="bg-[#E5E5E5] relative -top-20">
       <HeroSection />
       <hr />
       <HowItWorks />
@@ -22,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Layer(Home);

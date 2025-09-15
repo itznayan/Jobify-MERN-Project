@@ -6,6 +6,7 @@ import { Context } from "../../main";
 import { Input } from "./../ui/input";
 import { Textarea } from "./../ui/textarea";
 import { Button } from "./../ui/button";
+import Layer from "../../utils/Layer";
 
 const PostJob = () => {
   const [title, setTitle] = useState("");
@@ -35,7 +36,7 @@ const PostJob = () => {
     }
     await axios
       .post(
-        "https://jobify-mern-x3g5.onrender.com/api/v1/job/post",
+        "http://localhost:4000/api/v1/job/post",
         fixedSalary.length >= 4
           ? {
               title,
@@ -196,4 +197,4 @@ const PostJob = () => {
   );
 };
 
-export default PostJob;
+export default Layer(PostJob);

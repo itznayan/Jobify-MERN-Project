@@ -13,7 +13,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={isAuthorized ? "block bg-black/90 text-white p-10" : "hidden"}
+      className={isAuthorized ? "block bg-black/90 text-white p-10" : "block"}
     >
       <div>
         <p className="text-center max-sm:text-xl text-2xl">
