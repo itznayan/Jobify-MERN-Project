@@ -110,7 +110,12 @@ function App() {
       <CopilotKit publicApiKey={"ck_pub_f25b842eb5489ed5a976ab29abe167dd"}>
         <BrowserRouter>
           <Navbar />
-          <div className="h-20"></div>
+
+          <div className="h-20">
+            <h1 className="mt-20 z-[1000] text-center text-9xl w-full text-red-700 fixed">
+              Under Maintanance
+            </h1>
+          </div>
           <AnimatedRoutes />
           <button
             type="button"
