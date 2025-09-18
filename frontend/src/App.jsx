@@ -110,7 +110,6 @@ function App() {
     <>
       <CopilotKit publicApiKey={"ck_pub_f25b842eb5489ed5a976ab29abe167dd"}>
         <BrowserRouter>
-          <Preloader />
           <Navbar />
 
           <div className="h-20">
@@ -119,6 +118,7 @@ function App() {
             </h1> */}
           </div>
           <AnimatedRoutes />
+          <Preloader />
           <button
             type="button"
             onClick={() => setIsChatOpen((v) => !v)}
