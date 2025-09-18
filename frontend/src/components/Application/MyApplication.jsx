@@ -22,7 +22,7 @@ const MyApplication = () => {
             : "jobseeker/getall";
 
         const res = await axios.get(
-          `http://localhost:4000/api/v1/application/${endpoint}`,
+          `https://jobify-mern-x3g5.onrender.com/api/v1/application/${endpoint}`,
           {
             withCredentials: true,
           }
@@ -39,7 +39,7 @@ const MyApplication = () => {
   const deleteApplication = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/api/v1/application/delete/${id}`,
+        `https://jobify-mern-x3g5.onrender.com/api/v1/application/delete/${id}`,
         {
           withCredentials: true,
         }
@@ -64,14 +64,18 @@ const MyApplication = () => {
   };
 
   return (
-    <section className="my_application_page">
+    <section className="my_application_page md:min-h-screen sm:mt-2">
       {user && user.role === "Job Seeker" ? (
-        <div className="container">
+        <div className="container h-screen  ">
           <h3 className="text-3xl text-center font-bold mb-10">
             My Application
           </h3>
           {applications.length <= 0 ? (
-            <p className="text-center text-2xl mb-10">No Applications Found</p>
+            <div className="flex items-center justify-center relative -top-20 h-full w-full ">
+              <p className="text-center text-2xl mb-10">
+                No Applications Found
+              </p>
+            </div>
           ) : (
             applications.map((elem) => (
               <JobSeekerCard
@@ -84,7 +88,7 @@ const MyApplication = () => {
           )}
         </div>
       ) : (
-        <div className="container">
+        <div className="container sm:mt-2 md:mt-10">
           <h3 className="text-3xl text-center max-sm:mb-10">
             Applications from Job Seekers
           </h3>
@@ -126,15 +130,15 @@ export default Layer(MyApplication);
 
 const JobSeekerCard = ({ elem, deleteApplication, openModel }) => {
   return (
-    <div className="job_seeker_card flex flex-wrap max-sm:flex-col mb-10">
-      <div className="resume max-sm:size-full size-96">
+    <div className="job_seeker_card bg-stone-200 shadow-lg md:max-h-screen p-6 rounded-lg flex flex-wrap max-sm:flex-col mb-10">
+      <div className="resume max-sm:size-full size-52">
         <img
           src={elem.resume.url}
           alt="resume"
           onClick={() => openModel(elem.resume.url)}
         />
       </div>
-      <div className="detail flex justify-center flex-col space-y-4">
+      <div className="detail flex justify-center flex-col mx-8 mt-2 space-y-6">
         <p className="text-xl text-gray-700">
           <span className="font-semibold">Name: </span>
           {elem.name}
@@ -168,7 +172,7 @@ const JobSeekerCard = ({ elem, deleteApplication, openModel }) => {
 
 const EmployerCard = ({ elem, openModel }) => {
   return (
-    <div className="job_seeker_card flex flex-wrap max-sm:flex-col mb-10">
+    <div className="job_seeker_card bg-stone-200 md:max-h-screen flex flex-wrap max-sm:flex-col mb-10">
       <div className="resume max-sm:size-full size-96">
         <img
           src={elem.resume.url}

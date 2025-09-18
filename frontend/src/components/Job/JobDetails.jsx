@@ -15,7 +15,7 @@ const JobDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/job/${id}`, {
+      .get(`https://jobify-mern-x3g5.onrender.com/api/v1/job/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -27,7 +27,7 @@ const JobDetails = () => {
   }, []);
 
   return (
-    <section className="jobDetail page">
+    <section className="jobDetail page sm:mt-2 md:mt-10">
       <div className="container">
         <h3 className="text-center text-3xl font-bold">Job Details</h3>
         <div className="banner space-y-4 text-xl px-10 py-14 font-semibold">

@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        "https://jobify-mern-x3g5.onrender.com/api/v1/user/login",
         { email, role, password },
         {
           headers: {

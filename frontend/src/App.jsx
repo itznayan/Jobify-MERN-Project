@@ -22,6 +22,7 @@ import { AnimatePresence } from "framer-motion";
 import { CopilotKit } from "@copilotkit/react-core";
 import { CopilotSidebar } from "@copilotkit/react-ui";
 import "@copilotkit/react-ui/styles.css";
+import Preloader from "./components/Layout/Preloader";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -93,7 +94,7 @@ function App() {
     const fetchUser = async () => {
       try {
         const responce = await axios.get(
-          "http://localhost:4000/api/v1/user/getuser",
+          "https://jobify-mern-x3g5.onrender.com/api/v1/user/getuser",
           { withCredentials: true }
         );
         setUser(responce.data.user);
@@ -109,12 +110,13 @@ function App() {
     <>
       <CopilotKit publicApiKey={"ck_pub_f25b842eb5489ed5a976ab29abe167dd"}>
         <BrowserRouter>
+          <Preloader />
           <Navbar />
 
           <div className="h-20">
-            <h1 className="mt-20 z-[1000] text-center text-9xl w-full text-red-700 fixed">
+            {/* <h1 className="mt-20 z-[1000] text-center text-9xl w-full text-red-700 fixed">
               Under Maintanance
-            </h1>
+            </h1> */}
           </div>
           <AnimatedRoutes />
           <button

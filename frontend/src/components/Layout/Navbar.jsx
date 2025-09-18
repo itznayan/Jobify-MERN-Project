@@ -7,14 +7,21 @@ import { Button } from "../ui/button";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import logo from "../../../public/Logo.png";
+
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const { isAuthorized, setIsAuthorized, setUser, user } = useContext(Context);
+
   const navigateTo = useNavigate();
+
+  // 🔹 Modal state
+  const [isOpen, setIsOpen] = useState(false);
+  const [url, setUrl] = useState("");
+
   const handleLogout = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4000/api/v1/user/logout",
+        "https://jobify-mern-x3g5.onrender.com/api/v1/user/logout",
         { withCredentials: true }
       );
       toast(response.data.message);
@@ -25,17 +32,24 @@ const Navbar = () => {
       setIsAuthorized(true);
     }
   };
+
+  // 🔹 Open Resume Modal
+  const handleOpenResume = () => {
+    setUrl("https://resume-builder-for-all.vercel.app");
+    setIsOpen(true);
+    setShow(false); // close mobile menu if open
+  };
+
   return (
     <>
-      {/* <nav className={isAuthorized ? "block " : "hidden "}> */}
       <nav className="bg-transparent backdrop-blur-md fixed w-screen z-10 ">
-        <div className="px-4 bg-black/10">
+        <div className="px-4 bg-white/20">
           <div className="flex justify-between">
             <div className="w-48">
               <Link to={"/"}>
                 <img
                   className="max-sm:w-48 lg:w-48 object-fill"
-                  src="./Logo.png"
+                  src={logo}
                   alt="logo"
                 />
               </Link>
@@ -58,6 +72,12 @@ const Navbar = () => {
                   >
                     Home
                   </Link>
+                </li>
+                <li>
+                  {/* 🔹 Changed from Link → Button that opens modal */}
+                  <button className="letterSpace" onClick={handleOpenResume}>
+                    Generate Resume
+                  </button>
                 </li>
                 {isAuthorized ? (
                   <>
@@ -102,9 +122,7 @@ const Navbar = () => {
                           </Link>
                         </li>
                       </>
-                    ) : (
-                      <></>
-                    )}
+                    ) : null}
                     <Button onClick={handleLogout}>Log Out</Button>
                   </>
                 ) : (
@@ -140,6 +158,29 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      {/* 🔹 Custom Modal */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-60  backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white w-11/12 md:w-3/4 h-5/6 rounded-lg shadow-lg relative overflow-hidden">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded"
+            >
+              ✕
+            </button>
+
+            {/* Iframe */}
+            <iframe
+              src={url}
+              title="Generated Resume"
+              className="w-full h-full"
+              frameBorder="0"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };

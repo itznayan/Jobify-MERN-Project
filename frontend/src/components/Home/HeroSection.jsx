@@ -19,7 +19,7 @@ const HeroSection = () => {
                 <p
                   data-scroll
                   data-scroll-speed=".6"
-                  className="flex text-sm uppercase text-gray-300"
+                  className="flex text-sm uppercase text-gray-900"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

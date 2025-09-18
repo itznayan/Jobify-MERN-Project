@@ -15,7 +15,7 @@ const Jobs = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:4000/api/v1/job/getall", {
+        .get("https://jobify-mern-x3g5.onrender.com/api/v1/job/getall", {
           withCredentials: true,
         })
         .then((res) => {
@@ -27,7 +27,7 @@ const Jobs = () => {
   }, []);
 
   return (
-    <div className=" jobs-page py-10 px-20">
+    <div className=" jobs-page py-10 px-20 min-h-screen">
       <h1 className="text-3xl uppercase font-semibold">
         {"All Availble Jobs".split(" ").map((item, index) => (
           <motion.span
@@ -60,7 +60,7 @@ const Jobs = () => {
             jobs.jobs.map((element) => {
               return (
                 <div
-                  className="card py-8 px-4 flex flex-col justify-center lg:w-[30%] items-center rounded-3xl border-2 shadow-2xl "
+                  className="card py-8 px-4 flex flex-col justify-center lg:w-[30%] items-center rounded-3xl border-2 bg-stone-200 shadow-xl"
                   key={element._id}
                 >
                   <h2 className="text-4xl text-center text-black py-2">
